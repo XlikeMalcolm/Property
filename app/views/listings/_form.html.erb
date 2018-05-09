@@ -1,0 +1,87 @@
+<%= form_with(model: listing, local: true) do |form| %>
+  <% if listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :listing_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :listing_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details, id: :listing_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :listing_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street, id: :listing_street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :listing_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :listing_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agent_id %>
+    <%= form.number_field :agent_id, id: :listing_agent_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bedroom %>
+    <%= form.number_field :bedroom, id: :listing_bedroom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :livingroom %>
+    <%= form.number_field :livingroom, id: :listing_livingroom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parking %>
+    <%= form.number_field :parking, id: :listing_parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kitchen %>
+    <%= form.number_field :kitchen, id: :listing_kitchen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :featured %>
+    <%= form.check_box :featured, id: :listing_featured %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activated %>
+    <%= form.check_box :activated, id: :listing_activated %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
